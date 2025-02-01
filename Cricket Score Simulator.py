@@ -6,7 +6,11 @@ outcome1 = ['w', 0, 2, 4, 6, 2, 1, 2, 4, 1, 1, 6, 1, 1, 2, 4, 1, 0, 2, 3, 0, 'w'
             2, 1, 2, 0, 1, 4, 1]
 outcome2 = ['w', 0, 1, 0, 1, 0, 2, 4, 0, 1, 0, 1, 2, 0, 1, 0, 1, 2, 1, 'w', 0, 1, 4, 0, 1, 0, 2, 4, 0, 1, 6, 0, 1,
             2, 0, 1, 'w', 1, 3, 1]
-opponent = ['AUS', 'ENG', 'WI', 'NZ', 'PAK']
+outcome3 = ['w', 0, 2, 4, 6, 2, 1, 2, 4, 1, 1, 6, 1, 1, 2, 4, 1, 0, 2, 3, 0, 'w', 1, 1, 4, 0, 1, 0, 2, 4, 1, 1, 6, 0, 1,
+            2, 1, 2, 0, 1, 4, 1,'w', 0, 2, 4, 6, 2, 1, 2, 4, 1,'w', 1, 6, 1, 1, 2, 4, 1, 0, 2, 0, 'w']
+outcome4 = ['w', 0, 1, 4, 0, 1, 0, 2, 0, 1, 0, 0, 1, 0, 1, 2, 1, 4, 0, 1, 0, 0, 1, 2, 0, 1, 0, 1, 2, 1, 'w', 0, 1, 4, 0, 1, 0, 2, 0, 1, 0, 0, 1, 0, 1, 2, 1, 4, 0, 1, 6, 0, 1,
+           2, 0, 1, 0, 1, 3, 1, 0, 1, 0, 0, 1, 0, 1, 2, 1]
+opponent = ['SA','AUS', 'ENG', 'WI', 'NZ', 'PAK']
 oppteam = random.choices(opponent)
 b = oppteam[0]
 print('----------- CRICKET SCORE SIMULATOR -----------')
@@ -139,6 +143,7 @@ if ind is True and bat == 1:
     over = 0.0
     print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
     for balls in range(1, 121):
+        n = input()
         if batting_order[striker] > 7:
             rand = random.choices(outcome2)
             n = rand[0]
@@ -148,14 +153,22 @@ if ind is True and bat == 1:
             over = over + over1
         elif over > 15 and wicket <= 5:
             print('high time')
-            rand = random.choices(outcome1)
+            if n.lower()=='h':
+                rand = random.choices(outcome3)
+            else:
+                rand = random.choices(outcome1)
             n = rand[0]
             over = balls // 6
             over1 = balls % 6
             over1 = over1 / 10
             over = over + over1
         else:
-            rand = random.choices(outcome)
+            if n.lower()=='h':
+                rand = random.choices(outcome3)
+            elif n.lower()=='d':
+                rand = random.choices(outcome4)
+            else:
+                rand = random.choices(outcome)
             n = rand[0]
             over = balls // 6
             over1 = balls % 6
@@ -207,7 +220,7 @@ if ind is True and bat == 1:
             non_striker = temp
         rr = float((score / balls)*6)
         if over % 1 == 0:
-            n = input()
+            
             print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
@@ -215,7 +228,7 @@ if ind is True and bat == 1:
             over_timeline.clear()
             runs_in_over = 0
         else:
-            n = input()
+            
             print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
@@ -265,14 +278,22 @@ if ind is True and bat == 2:
 
         if over > 15 and wicket <= 5:
             print('high time')
-            rand = random.choices(outcome1)
+            if n.lower()=='h':
+                rand = random.choices(outcome3)
+            else:
+                rand = random.choices(outcome1)
             n = rand[0]
             over = balls // 6
             over1 = balls % 6
             over1 = over1 / 10
             over = over + over1
         else:
-            rand = random.choices(outcome)
+            if n.lower()=='h':
+                rand = random.choices(outcome3)
+            elif n.lower()=='d':
+                rand = random.choices(outcome4)
+            else:
+                rand = random.choices(outcome)
             n = rand[0]
             over = balls // 6
             over1 = balls % 6
