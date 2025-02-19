@@ -329,7 +329,7 @@ if ind is True and bat == 2:
             runs_in_over += n
             runs[striker] = runs.get(striker, 0) + n
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
-        elif n > (team_1_score+1)-(score+n):
+        elif n > (team_1_score+1)-(score):
             print(n)
             print('vulnerable')
             n = (team_1_score+1)-score
