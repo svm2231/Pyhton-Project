@@ -1,14 +1,13 @@
 import random
 
-outcome = ['w', 0, 1, 4, 0, 1, 0, 2, 4, 0, 1, 6, 0, 1, 2, 0, 1, 0, 1, 2, 1, 'w', 0, 1, 4, 0, 1, 0, 2, 4, 0, 1, 6, 0, 1,
-           2, 0, 1, 0, 1, 3, 1]
-outcome1 = ['w', 0, 2, 4, 6, 2, 1, 2, 4, 1, 1, 6, 1, 1, 2, 4, 1, 0, 2, 3, 0, 'w', 1, 1, 4, 0, 1, 0, 2, 4, 1, 1, 6, 0, 1,
-            2, 1, 2, 0, 1, 4, 1]
-outcome2 = ['w', 0, 1, 0, 1, 0, 2, 4, 0, 1, 0, 1, 2, 0, 1, 0, 1, 2, 1, 'w', 0, 1, 4, 0, 1, 0, 2, 4, 0, 1, 6, 0, 1,
-            2, 0, 1, 'w', 1, 3, 1]
-outcome3 = ['w', 0, 2, 4, 6, 2, 1, 2, 4, 1, 1, 6, 1, 1, 2, 4, 1, 0, 2, 3, 0, 'w', 1, 1, 4, 0, 1, 0, 2, 4, 1, 1, 6, 0, 1,
-            2, 1, 2, 0, 1, 4, 1,'w', 0, 2, 4, 6, 2, 1, 2, 4, 1,'w', 1, 6, 1, 1, 2, 4, 1, 0, 2, 0, 'w']
-outcome4 = ['w', 0, 1, 4, 0, 1, 0, 2, 0, 1, 0, 0, 1, 0, 1, 2, 1, 4, 0, 1, 0, 0, 1, 2, 0, 1, 0, 1, 2, 1, 'w', 0, 1, 4, 0, 1, 0, 2, 0, 1, 0, 0, 1, 0, 1, 2, 1, 4, 0, 1, 6, 0, 1, 2, 0, 1, 0, 1, 3, 1, 0, 1, 0, 0, 1, 0, 1, 2, 1, 1, 0, 1, 0, 0, 1, 0, 1, 2, 1]
+outcome = ['w', 0, 1, 4, 0, 1, 0,1,0,1,0,0,1,0,2,0,1,0, 2, 4, 0, 1, 6,0,1,1,0,2,0,0,0,1,0, 2, 4, 0, 1,0,2,0,0,0,1,0,1,2,0,1,0,1,1,0,1,0,1,1,0,0,1,2,1,0,1,1, 6, 0, 1, 2, 0,1,2,'w', 0, 1, 4, 0, 1, 0,0,0,0,1,0,0,1, 1, 0,4, 0, 1, 0, 2, 4, 1, 2,1,0,1,0,0,1,0,2,0,1,0,1,1,0,1,0,1,1,0,0,1,0,0,0,1,0,0,1, 1, 0, 1, 2, 1, 'w', 0, 1, 4, 0, 1, 0, 2, 4, 0, 1, 6, 0, 1, 2, 0, 1, 0, 1, 3, 1]
+
+outcome1 = ['w', 0, 2, 4, 6, 2, 1, 2, 4, 1, 1, 6, 1, 1, 2, 4, 1,0, 1, 0, 0, 1, 0, 1, 2, 1, 4, 0, 1, 6, 0, 0, 2, 3, 0, 'w', 1, 1, 4, 0,1,0,1,1,0,2,0, 1, 0, 2, 4, 1, 1, 6, 0, 1, 2, 1, 2, 0, 1, 4, 1]
+
+outcome2 = ['w', 0, 1, 0, 1, 0,1,0,0,1,0,0,0,1,0,0, 2, 4, 0, 1, 0, 1, 2,0,'w',0,1,0,0,0,1,0,0, 0, 1, 0, 1, 2, 1, 'w', 0, 1, 4, 0, 1, 0, 2, 4, 0, 0, 1, 0, 1, 2,0 ,1, 6, 0, 1,0,0,1,0,0,0,1,0,0, 2,0,0,0,1,0,0, 0, 1, 'w', 1, 3, 1]
+
+outcome3 = ['w', 0, 2, 4, 6, 2, 1, 2, 4, 1, 1, 6, 1, 1, 2, 4, 1, 0, 2, 3, 0, 'w', 1, 1, 4, 0, 1, 0, 2, 4, 1, 1, 6, 0, 'w',1, 1, 4, 0, 1, 0, 2, 4, 1, 1, 6, 0, 2, 1, 2, 0, 1, 4, 1,1, 0, 2, 4, 6, 2, 1, 2, 4, 1,'w', 1, 6, 1, 1, 2, 4, 1, 0, 2, 0, 'w']
+
 opponent = ['SA','AUS', 'ENG', 'WI', 'NZ', 'PAK']
 oppteam = random.choices(opponent)
 b = oppteam[0]
@@ -27,22 +26,14 @@ toss = toss[0]
 choice = ['BAT', 'BOWL']
 choice = random.choices(choice)
 choice = choice[0]
-batting_order = {'Shikhar Dhawan': 1, 'Rohit Sharma': 2, 'Virat Kohli': 3, 'Rishabh Pant': 4, 'Shreyash Iyer': 5,
-                 'Surya Kumar Yadav': 6, 'Ravindra Jadeja': 7, 'Deepak Chahar': 8, 'Yuzvendra Chahal': 9,
-                 'Md.Siraj': 10,
-                 'Jasprit Bumrah': 11}
-runs = {'Shikhar Dhawan': 0, 'Rohit Sharma': 0, 'Virat Kohli': 0, 'Rishabh Pant': 0, 'Shreyash Iyer': 0,
-        'Surya Kumar Yadav': 0, 'Ravindra Jadeja': 0, 'Deepak Chahar': 0, 'Yuzvendra Chahal': 0, 'Md.Siraj': 0,
-        'Jasprit Bumrah': 0}
-bat_ball = {'Shikhar Dhawan': 0, 'Rohit Sharma': 0, 'Virat Kohli': 0, 'Rishabh Pant': 0, 'Shreyash Iyer': 0,
-            'Surya Kumar Yadav': 0, 'Ravindra Jadeja': 0, 'Deepak Chahar': 0, 'Yuzvendra Chahal': 0, 'Md.Siraj': 0,
-            'Jasprit Bumrah': 0}
-sixes = {'Shikhar Dhawan': 0, 'Rohit Sharma': 0, 'Virat Kohli': 0, 'Rishabh Pant': 0, 'Shreyash Iyer': 0,
-         'Surya Kumar Yadav': 0, 'Ravindra Jadeja': 0, 'Deepak Chahar': 0, 'Yuzvendra Chahal': 0, 'Md.Siraj': 0,
-         'Jasprit Bumrah': 0}
-fours = {'Shikhar Dhawan': 0, 'Rohit Sharma': 0, 'Virat Kohli': 0, 'Rishabh Pant': 0, 'Shreyash Iyer': 0,
-         'Surya Kumar Yadav': 0, 'Ravindra Jadeja': 0, 'Deepak Chahar': 0, 'Yuzvendra Chahal': 0, 'Md.Siraj': 0,
-         'Jasprit Bumrah': 0}
+batting_order = {'Rohit Sharma': 1, 'Shubhman Gill': 2, 'Virat Kohli': 3, 'Shreyash Iyer': 4, 'KL Rahul': 5,
+                 'Hardik Pandya': 6, 'Ravindra Jadeja': 7, 'Jasprit Bumrah': 8, 'Md.Shami': 9,
+                 'Arshdeep Singh': 10,
+                 'Kuldeep Yadav': 11}
+runs = {'Rohit Sharma': 0, 'Shubhman Gill': 0, 'Virat Kohli': 0, 'Shreyash Iyer': 0, 'KL Rahul': 0,'Hardik Pandya': 0, 'Ravindra Jadeja': 0, 'Jasprit Bumrah': 0, 'Md.Shami': 0,'Arshdeep Singh': 0,'Kuldeep Yadav': 0}
+bat_ball = {'Rohit Sharma': 0, 'Shubhman Gill': 0, 'Virat Kohli': 0, 'Shreyash Iyer': 0, 'KL Rahul': 0,'Hardik Pandya': 0, 'Ravindra Jadeja': 0, 'Jasprit Bumrah': 0, 'Md.Shami': 0,'Arshdeep Singh': 0,'Kuldeep Yadav': 0}
+sixes = {'Rohit Sharma': 0, 'Shubhman Gill': 0, 'Virat Kohli': 0, 'Shreyash Iyer': 0, 'KL Rahul': 0,'Hardik Pandya': 0, 'Ravindra Jadeja': 0, 'Jasprit Bumrah': 0, 'Md.Shami': 0,'Arshdeep Singh': 0,'Kuldeep Yadav': 0}
+fours = {'Rohit Sharma': 0, 'Shubhman Gill': 0, 'Virat Kohli': 0, 'Shreyash Iyer': 0, 'KL Rahul': 0,'Hardik Pandya': 0, 'Ravindra Jadeja': 0, 'Jasprit Bumrah': 0, 'Md.Shami': 0,'Arshdeep Singh': 0,'Kuldeep Yadav': 0}
 batsman = list()
 for striker in runs:
     batsman.append(striker)
@@ -52,7 +43,7 @@ batsman_count = 1
 score = 0
 wicket = 0
 over = 0.0
-rem = 120
+rem = 300
 rr = 0.0
 dot_ball = 0
 single = 0
@@ -95,7 +86,8 @@ if ind is False and bat == 2:
     rr = 0
     over = 0.0
     print('', b, '', team_1_score, '-', team_1_wicket, ', overs:', over, 'RR:', rr)
-    for balls in range(1, 121):
+    for balls in range(1, 301):
+        
         if team_1_wicket > 6:
             rand = random.choices(outcome2)
             n = rand[0]
@@ -103,7 +95,8 @@ if ind is False and bat == 2:
             over1 = balls % 6
             over1 = over1 / 10
             over = over + over1
-        elif over > 15 and team_1_wicket <= 5:
+        elif over > 45 and team_1_wicket <= 5:
+            
             print('high time')
             rand = random.choices(outcome1)
             n = rand[0]
@@ -141,8 +134,8 @@ if ind is True and bat == 1:
     rr = 0
     over = 0.0
     print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
-    for balls in range(1, 121):
-        g = input()
+    for balls in range(1, 301):
+        i=input()
         if batting_order[striker] > 7:
             rand = random.choices(outcome2)
             n = rand[0]
@@ -150,31 +143,24 @@ if ind is True and bat == 1:
             over1 = balls % 6
             over1 = over1 / 10
             over = over + over1
-        elif over > 15 and wicket <= 5:
-           
-            if g.lower()=='h':
-                rand = random.choices(outcome3)
-                print('high time HIT')
-                print()
+        elif over > 45 and wicket <= 5:
+            if i.lower()=='h':
+                print('high HIT')
+                n=random.choice(outcome3)
             else:
-                rand = random.choices(outcome1)
-            n = rand[0]
+                print('high time')
+                n = random.choice(outcome1)
+            
             over = balls // 6
             over1 = balls % 6
             over1 = over1 / 10
             over = over + over1
         else:
-            if g.lower()=='h':
-                rand = random.choices(outcome3)
+            if i.lower()=='h':
                 print('HIT')
-                print()
-            elif g.lower()=='d':
-                rand = random.choices(outcome4)
-                print('DEF')
-                print()
+                n=random.choice(outcome3)
             else:
-                rand = random.choices(outcome)
-            n = rand[0]
+                n = random.choice(outcome)
             over = balls // 6
             over1 = balls % 6
             over1 = over1 / 10
@@ -225,7 +211,6 @@ if ind is True and bat == 1:
             non_striker = temp
         rr = float((score / balls)*6)
         if over % 1 == 0:
-            
             print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
@@ -272,8 +257,8 @@ if ind is True and bat == 2:
     margin = abs(team_1_score - score) + 1
     print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
     print('', team_1_score - score + 1, 'Needed in 20.0 Overs')
-    for balls in range(1, 121):
-        g=input()
+    for balls in range(1, 301):
+        i=input()
         if batting_order[striker] > 7:
             rand = random.choices(outcome2)
             n = rand[0]
@@ -282,32 +267,24 @@ if ind is True and bat == 2:
             over1 = over1 / 10
             over = over + over1
 
-        elif over > 15 and wicket <= 5:
-            
-            if g.lower()=='h':
-                rand = random.choices(outcome3)
+        if over > 45 and wicket <= 5:
+            if i.lower()=='h':
                 print('high HIT')
-                print()
+                n=random.choice(outcome3)
             else:
-                rand = random.choices(outcome1)
                 print('high time')
-            n = rand[0]
+                n = random.choice(outcome1)
             over = balls // 6
             over1 = balls % 6
             over1 = over1 / 10
             over = over + over1
         else:
-            if g.lower()=='h':
-                rand = random.choices(outcome3)
+            if i.lower()=='h':
                 print('HIT')
-                print()
-            elif g.lower()=='d':
-                rand = random.choices(outcome4)
-                print('DEF')
-                print()
+                n=random.choice(outcome3)
             else:
-                rand = random.choices(outcome)
-            n = rand[0]
+                n = random.choice(outcome)
+            
             over = balls // 6
             over1 = balls % 6
             over1 = over1 / 10
@@ -329,10 +306,9 @@ if ind is True and bat == 2:
             runs_in_over += n
             runs[striker] = runs.get(striker, 0) + n
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
-        elif n > (team_1_score+1)-(score+n):
-            print(n)
+        elif n > margin:
             print('vulnerable')
-            n = (team_1_score+1)-score
+            n = margin
             runs_in_over += n
             score += n
             runs[striker] = runs.get(striker, 0) + n
@@ -359,7 +335,7 @@ if ind is True and bat == 2:
             triple += 1
         elif n == 0:
             dot_ball += 1
-        rem = 120 - balls
+        rem = 300 - balls
         rr = float((score / balls) * 6)
         if n == 'w':
             if wicket == 10:
@@ -379,7 +355,7 @@ if ind is True and bat == 2:
             non_striker = temp
         if over % 1 == 0:
             print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
-            print('Need', team_1_score - score + 1, 'Runs in', 120 - balls, 'Balls')
+            print('Need', team_1_score - score + 1, 'Runs in', 300 - balls, 'Balls')
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
                   bat_ball[non_striker], ')')
@@ -387,7 +363,7 @@ if ind is True and bat == 2:
             runs_in_over = 0
         else:
             print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
-            print('Need', team_1_score - score + 1, 'Runs in', 120 - balls, 'Balls')
+            print('Need', team_1_score - score + 1, 'Runs in', 300 - balls, 'Balls')
             print('Over Timeline:', over_timeline, runs_in_over, 'Runs In This Over')
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
                   bat_ball[non_striker], ')')
@@ -426,7 +402,7 @@ if ind is False and bat == 1:
     print('', b, 'Batting')
     print('')
     print(' ', b, team_1_score, '-', team_1_wicket, ', overs:', over, 'RR:', rr)
-    for balls in range(1, 121):
+    for balls in range(1, 301):
         if team_1_wicket > 6:
             rand = random.choices(outcome2)
             n = rand[0]
@@ -434,7 +410,7 @@ if ind is False and bat == 1:
             over1 = balls % 6
             over1 = over1 / 10
             over = over + over1
-        elif over > 15 and team_1_wicket <= 5:
+        elif over > 45 and team_1_wicket <= 5:
             print('high time')
             rand = random.choices(outcome1)
             n = rand[0]
@@ -463,7 +439,7 @@ if ind is False and bat == 1:
             team_1_score += n
             runs_in_over += n
         over_timeline.append(n)
-        rem = 120 - balls
+        rem = 300 - balls
         if n == 'w':
             if team_1_wicket == 10:
                 print(' ', b, team_1_score, '-', team_1_wicket, ', overs:', over, 'RR:', rr)
@@ -479,7 +455,7 @@ if ind is False and bat == 1:
         if over % 1 == 0:
             n = input()
             print(' ', b, team_1_score, '-', team_1_wicket, ', overs:', over, 'RR:', rr)
-            print('Need', score - team_1_score + 1, 'Runs in', 120 - balls, 'Balls')
+            print('Need', score - team_1_score + 1, 'Runs in', 300 - balls, 'Balls')
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             over_timeline.clear()
             runs_in_over = 0
