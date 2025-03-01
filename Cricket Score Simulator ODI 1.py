@@ -8,6 +8,8 @@ outcome2 = ['w', 0, 1, 0, 1, 0,1,0,0,1,0,0,0,1,0,0, 2, 4, 0, 1, 0, 1, 2,0,'w',0,
 
 outcome3 = ['w', 0, 2, 4, 6, 2, 1, 2, 4, 1, 1, 6, 1, 1, 2, 4, 1, 0, 2, 3, 0, 'w', 1, 1, 4, 0, 1, 0, 2, 4, 1, 1, 6, 0, 'w',1, 1, 4, 0, 1, 0, 2, 4, 1, 1, 6, 0, 2, 1, 2, 0, 1, 4, 1,1, 0, 2, 4, 6, 2, 1, 2, 4, 1,'w', 1, 6, 1, 1, 2, 4, 1, 0, 2, 0, 'w']
 
+outcome4 = ['w', 0, 1, 4, 0, 1, 0,1,0,1,0,0,1,0,2,0,1,0, 2, 1, 0, 1, 6,0,1,1,0,2,0,0,0,1,0, 2, 4, 0, 1,0,2,0,0,0,1,0,1,2,0,1,0,1,1,0,1,0,1,1,0,0,1,2,1,0,1,1, 6, 0, 1, 2, 0,1,2,'w', 0, 1, 0, 0, 1, 0,0,0,0,1,0,0,1, 1, 0,4, 0, 1, 0, 2, 0, 1, 2,1,0,1,0,0,1,0,2,0,1,0,1,1,0,1,0,1,1,0,0,1,0,0,0,1,0,0,1, 1, 0, 1, 2, 1, 0, 0, 1, 0, 0, 1, 0, 2, 4, 0, 1, 1, 0, 1, 2, 0, 1, 0, 1, 3, 1]
+
 opponent = ['SA','AUS', 'ENG', 'WI', 'NZ', 'PAK']
 oppteam = random.choices(opponent)
 b = oppteam[0]
@@ -135,7 +137,7 @@ if ind is True and bat == 1:
     over = 0.0
     print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
     for balls in range(1, 301):
-        i=input()
+        i=input('H:D')
         if batting_order[striker] > 7:
             rand = random.choices(outcome2)
             n = rand[0]
@@ -159,6 +161,10 @@ if ind is True and bat == 1:
             if i.lower()=='h':
                 print('HIT')
                 n=random.choice(outcome3)
+            elif i.lower()=='d':
+                n = random.choice(outcome4)
+                print('DEF')
+                print()
             else:
                 n = random.choice(outcome)
             over = balls // 6
@@ -258,7 +264,7 @@ if ind is True and bat == 2:
     print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
     print('', team_1_score - score + 1, 'Needed in 20.0 Overs')
     for balls in range(1, 301):
-        i=input()
+        i=input('H:D')
         if batting_order[striker] > 7:
             rand = random.choices(outcome2)
             n = rand[0]
@@ -282,6 +288,9 @@ if ind is True and bat == 2:
             if i.lower()=='h':
                 print('HIT')
                 n=random.choice(outcome3)
+            elif i.lower()=='d':
+                n = random.choice(outcome4)
+                print('DEF')
             else:
                 n = random.choice(outcome)
             

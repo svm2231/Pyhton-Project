@@ -140,6 +140,8 @@ if ind is False and bat == 2:
 if ind is True and bat == 1:
     rr = 0
     over = 0.0
+    part_run=0
+    part_bowl=0
     print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
     for balls in range(1, 121):
         g = input()
@@ -187,14 +189,20 @@ if ind is True and bat == 1:
             sixes[striker] = sixes.get(striker, 0) + 1
 
         if n == 'w':
+            part_run=0
+            part_bowl=0
             wicket += 1
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
         elif n % 2 == 0:
             score += n
+            part_bowl+=1
+            part_run+=n
             runs_in_over += n
             runs[striker] = runs.get(striker, 0) + n
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
         else:
+            part_bowl+=1
+            part_run+=n
             score += n
             runs_in_over += n
             runs[striker] = runs.get(striker, 0) + n
@@ -230,6 +238,7 @@ if ind is True and bat == 1:
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
                   bat_ball[non_striker], ')')
+            print('Paartnership: ',str(part_run)+'('+str(part_bowl)+')')
             over_timeline.clear()
             runs_in_over = 0
         else:
@@ -238,6 +247,7 @@ if ind is True and bat == 1:
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
                   bat_ball[non_striker], ')')
+            print('Paartnership: ',str(part_run)+'('+str(part_bowl)+')')
     print('')
     print('----------Scorecard----------')
     print('')
@@ -268,6 +278,8 @@ print('End of Inning')
 if ind is True and bat == 2:
     rr = 0
     over = 0.0
+    part_bowl=0
+    part_run=0
     print('')
     margin = abs(team_1_score - score) + 1
     print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
@@ -320,11 +332,16 @@ if ind is True and bat == 2:
             sixes[striker] = sixes.get(striker, 0) + 1
 
         if n == 'w':
+            part_run=0
+            part_bowl=0
             wicket += 1
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
         elif n == 0:
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
+            part_bowl+=1
         elif n == 6 or n == 4:
+            part_run+=n
+            part_bowl+=1
             score += n
             runs_in_over += n
             runs[striker] = runs.get(striker, 0) + n
@@ -334,16 +351,22 @@ if ind is True and bat == 2:
             print('vulnerable')
             n = (team_1_score+1)-score
             runs_in_over += n
+            part_run+=n
+            part_bowl+=1
             score += n
             runs[striker] = runs.get(striker, 0) + n
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
         elif n == 2:
             score += n
+            part_run+=n
+            part_bowl+=1
             runs_in_over += n
             runs[striker] = runs.get(striker, 0) + n
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
         else:
             score += n
+            part_run+=n
+            part_bowl+=1
             runs_in_over += n
             runs[striker] = runs.get(striker, 0) + n
             bat_ball[striker] = bat_ball.get(striker, 0) + 1
@@ -383,6 +406,7 @@ if ind is True and bat == 2:
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
                   bat_ball[non_striker], ')')
+            print('Paartnership: ',str(part_run)+'('+str(part_bowl)+')')
             over_timeline.clear()
             runs_in_over = 0
         else:
@@ -391,6 +415,7 @@ if ind is True and bat == 2:
             print('Over Timeline:', over_timeline, runs_in_over, 'Runs In This Over')
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
                   bat_ball[non_striker], ')')
+            print('Paartnership: ',str(part_run)+'('+str(part_bowl)+')')
 
     print('')
     print('----------Scorecard----------')
