@@ -400,9 +400,10 @@ if ind is True and bat == 2:
             temp = striker
             striker = non_striker
             non_striker = temp
+        req=str(((team_1_score - score + 1)/(120 - balls))*6)
         if over % 1 == 0:
             print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
-            print('Need', team_1_score - score + 1, 'Runs in', 120 - balls, 'Balls')
+            print('Need', team_1_score - score + 1, 'Runs in', 120 - balls, 'Balls','   REQR:',req[:5])
             print('Over Timeline:', over_timeline, 'Runs In This Over', runs_in_over)
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
                   bat_ball[non_striker], ')')
@@ -411,7 +412,7 @@ if ind is True and bat == 2:
             runs_in_over = 0
         else:
             print('  IND:', score, '-', wicket, ', overs:', over, 'RR:', rr)
-            print('Need', team_1_score - score + 1, 'Runs in', 120 - balls, 'Balls')
+            print('Need', team_1_score - score + 1, 'Runs in', 120 - balls, 'Balls','   REQR:',req[:5])
             print('Over Timeline:', over_timeline, runs_in_over, 'Runs In This Over')
             print(striker, runs[striker], '(', bat_ball[striker], ')', ':', non_striker, runs[non_striker], '(',
                   bat_ball[non_striker], ')')
